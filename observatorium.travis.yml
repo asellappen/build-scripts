@@ -1,0 +1,26 @@
+# ----------------------------------------------------------------------------
+#
+# Package             : observatorium
+# Source Repo         : https://github.com/observatorium/observatorium
+# Travis Job Link     : https://travis-ci.com/github/asellappen/observatorium/
+# Created travis.yml  : Yes
+# Maintainer          : Arumugam N S <asellappen@yahoo.com> / Priya Seth<sethp@us.ibm.com>
+#
+# Script License      : Apache License, Version 2 or later
+#
+# ----------------------------------------------------------------------------
+language: go
+
+arch:
+ - amd64
+ - ppc64le
+  
+go:
+ - 1.15
+ - 1.14
+
+script:
+ - export PATH=${PATH}:`go env GOPATH`/bin
+ - go build -v ./...
+ - go test -v ./...
+ 
